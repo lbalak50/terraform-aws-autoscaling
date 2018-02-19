@@ -61,5 +61,5 @@ resource "aws_autoscaling_group" "this" {
     // protect_from_scale_in     = "${var.protect_from_scale_in}"
     // placement_group           = "${var.placement_group}"
 
-    tags = "${var.tags}"
+    tags = ["${var.tags}"]
 }
