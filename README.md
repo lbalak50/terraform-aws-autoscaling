@@ -12,14 +12,16 @@ provider "aws" {
   region  = "eu-west-1"
 }
 
-# Add our RDS Database
+# Add our autoscaler
 module "autoscaler" {
     source             = "git::ssh://git@gitlab.olindata.com/terraform/terraform-aws-autoscaling.git"
     name               = "widgets-webservers"
     subnet_ids         = ["subnet-12312312", "subnet-23423423"]  # Put your private subnet IDs here, maybe from our
+    image_id           = "ami-12312312"                          # (optional, put premade AMI here, defaults to latest ubuntu)
     is_live            = false                                   # (optional, default false) Set to true for Multi-AZ and advanced monitoring
     instance_type      = "${var.instance_type}"                  # (optional, default db.t2.nano) Set the instance type
     security_groups    = ["${aws_security_group.default.id}"]    # (optional) Add security group ids to the instances
+    user_data          = ""                                      # (optional, put userdata scripts here)
 }
 
 # WARNING: In the above example, you should be using our terraform-tags
