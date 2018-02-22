@@ -40,6 +40,12 @@ Authors
 
 <br/>Module created and managed by [Farley](https://github.com/andrewfarley) and [OlinData](https://olindata.com/)
 
+
+Todo list
+-------
+
+* Add CloudWatch Alarms to scale up/down based on CPU Load (possibly Farley's Multi-model scaling approach)
+
 License
 -------
 
