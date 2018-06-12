@@ -14,7 +14,7 @@ provider "aws" {
 
 # Add our autoscaler
 module "autoscaler" {
-    source             = "git::ssh://git@gitlab.olindata.com/terraform/terraform-aws-autoscaling.git"
+    source             = "github.com/olindata/terraform-aws-ezvpc.git"
     name               = "widgets-webservers"
     subnet_ids         = ["subnet-12312312", "subnet-23423423"]  # Put your private subnet IDs here, maybe from our
     image_id           = "ami-12312312"                          # (optional, put premade AMI here, defaults to latest ubuntu)
